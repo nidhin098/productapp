@@ -27,7 +27,7 @@ const Add = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
    if(location.state!=null){
-     axiosInstance.post(`http://localhost:5000/product/update/${location.state.product._id}`, product)
+     axiosInstance.post(`/product/update/${location.state.product._id}`, product)
       .then((res) => {
         setProduct({
           title: "",
@@ -42,7 +42,7 @@ const Add = () => {
       })
 
    }else{
-     axiosInstance.post('http://localhost:5000/product/add', product)
+     axiosInstance.post('/product/add', product)
       .then((res) => {
         setProduct({
           title: "",

@@ -17,7 +17,7 @@ const Login = () => {
 
   function capValue(e) {
     e.preventDefault();
-    axios.post('http://localhost:5000/user/login', form)
+    axios.post('/api/user/login', form)
       .then((res) => {
         console.log('Form submitted', form);
         alert(res.data.message);

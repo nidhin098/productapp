@@ -15,7 +15,7 @@ const Home = () =>{
     
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:5000/product/',products)
+        axios.get('/api/product/',products)
         .then((res)=>{
             setProducts(res.data)
 
@@ -27,7 +27,7 @@ const Home = () =>{
     },[])
 // function for delete
   const deleteProduct = (id) => {
-    axiosInstance.delete('http://localhost:5000/product/delete/' + id)
+    axiosInstance.delete('/api/product/delete/' + id)
       .then((res) => {
         window.location.reload()
       })
